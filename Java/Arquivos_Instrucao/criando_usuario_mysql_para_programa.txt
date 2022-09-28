@@ -1,0 +1,5 @@
+CREATE USER 'dtoadm'@'%' IDENTIFIED BY 'dtoAdmin2022$lab';
+
+GRANT ALL PRIVILEGES ON * . * TO 'dtoadm'@'%';
+
+FLUSH PRIVILEGES;

@@ -1,0 +1,64 @@
+/*********************************************************************/
+
+ENTRAR NO BANCO DE DADOS
+
+1) Entrar no "Mysql command line client" na busca do windows
+2) Senha "admin"
+3) Digitar "USE dto_keys"
+
+/*********************************************************************/
+
+SELECIONAR(VISUALIZAR) TODOS OS DADOS DA TABELA
+
+SELECT * FROM general_keys;
+
+/*********************************************************************/
+
+SELECIONAR TABELA AO FINAL DO RETRABALHO
+
+ATIVADAS: SELECT keycontent,serialcontent FROM general_keys WHERE keystate=3;
+BLOQUEADAS: SELECT keycontent FROM general_keys WHERE keystate=2;
+
+Copie e Cole em um bloco de notas
+
+/*********************************************************************/
+
+INSERIR CHAVES UMA UNICA CHAVE
+
+INSERT INTO general_keys (idkey,keycontent,serialcontent,keystate,bancada) VALUE (default,'8FT2P-WND82-6DWDP-X3CQF-W8FBC','',0,'');
+
+PARA INSERIR VARIAS CHAVES USE O PROGRAMA "InsertKeysProgram" abrindo a "index.html" no navegador
+
+UPDATE 2
+
+/*********************************************************************/
+
+ESVAZIAR TABELA PARA NOVO RETRABALHO
+
+DELETE FROM general_keys WHERE idkey > 0;
+
+/*********************************************************************/
+
+ATUALIZAR CHAVE
+
+0 - Disponível
+1 - Em uso
+2 - Bloqueada
+3 - Ativada
+
+Coloca o ID da chave a ser alterada no lugar de "?" e o Status a ser atualizado no lugar de "0"
+
+UPDATE general_keys SET keystate=0 WHERE idkey=?;
+UPDATE general_keys SET serialcontent=3 WHERE idkey=?;
+
+UPDATE general_keys SET keystate=3,serialcontent='PE09PG14' WHERE idkey=1063;
+
+/*********************************************************************/
+
+ATUALIZAR TODAS AS CHAVES COM STATUS 1 (Em uso)
+
+UPDATE general_keys SET keystate=0 WHERE keystate=1;
+
+/*********************************************************************/
+
+
